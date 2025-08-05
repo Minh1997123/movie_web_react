@@ -1,0 +1,19 @@
+.search {
+  background-color: black;
+  width: 100%;
+  padding-bottom: 20px;
+  color: white;
+}
+.search h2 {
+  margin-left: 20px;
+}
+.search button {
+  cursor: pointer;
+}
+.search ul {
+  display: grid;
+  list-style: none;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 20px;
+  padding: 20px 40px;
+}

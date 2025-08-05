@@ -1,0 +1,42 @@
+.form {
+  background-color: white;
+  width: 40%;
+  margin: auto;
+  padding-bottom: 30px;
+  border-radius: 3px;
+}
+
+.form-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  padding-left: 30px;
+  border-bottom: 3px solid #00b7e6;
+  margin-bottom: 40px;
+}
+.form-input input {
+  border: 0;
+  outline: none;
+  height: 50%;
+  flex-grow: 2;
+}
+.form-input svg {
+  height: 2rem;
+  width: 5rem;
+}
+.form-button {
+  display: flex;
+  justify-content: end;
+  padding-right: 30px;
+}
+.form-button button {
+  height: 2.5rem;
+  margin-left: 10px;
+  padding: 0 15px;
+  border: 0;
+  background-color: transparent;
+}
+.form-button button:last-child {
+  background-color: #00b7e6;
+}

@@ -1,0 +1,47 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  position: sticky;
+  background-color: transparent;
+  top: 0;
+  font-size: 1.5rem;
+}
+.navbar * {
+  cursor: pointer;
+}
+.navbar p {
+  color: red;
+}
+.navbar svg {
+  height: 2rem;
+  width: 5rem;
+}
+.navbar__black {
+  background-color: black;
+  animation-name: to-black;
+  animation-duration: 2s;
+}
+@keyframes to-black {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: black;
+  }
+}
+
+.navbar__transparent {
+  animation-name: to-transparent;
+  animation-duration: 2s;
+}
+
+@keyframes to-transparent {
+  from {
+    background-color: black;
+  }
+  to {
+    background-color: transparent;
+  }
+}
