@@ -2,7 +2,7 @@ import Banner from "../../component/Banner/Banner";
 import style from "./Browse.module.css";
 import Poster from "../../component/Poster/Poster";
 import MovieList from "../../component/Movielist/MovieList";
-import { useContext, useState, useEffect, memo } from "react";
+import { useContext, useState, useEffect } from "react";
 import CartContext from "../../store/context";
 import NavBar from "../../component/Navbar/NavBar";
 const Browse = function () {

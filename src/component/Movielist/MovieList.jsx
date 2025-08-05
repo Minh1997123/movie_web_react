@@ -49,6 +49,7 @@ const MovieList = function (props) {
             <img
               key={movie.id}
               src={getSrcHandler(movie.backdrop_path)}
+              alt="img movie"
               onClick={() => getMovieDetailHandler(movie)}
             ></img>
           );

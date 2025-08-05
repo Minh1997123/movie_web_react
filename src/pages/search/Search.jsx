@@ -35,6 +35,7 @@ const Search = () => {
     //  lay thong tin cua movie tu context
     moviesContext.getDetailHandler(movie);
   };
+
   return (
     <div className={style.search}>
       <NavBar></NavBar>

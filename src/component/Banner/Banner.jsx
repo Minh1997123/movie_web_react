@@ -19,7 +19,6 @@ const Banner = function () {
       // ham lay du lieu tu context
       const getDataHandler = async function () {
         const data = await movies.dataOriginal;
-        console.log(data);
         if (data.length > 0) {
           // lay 1 phim ngau nhien
           const dataMovie = data[randomNumberHandler(data)];

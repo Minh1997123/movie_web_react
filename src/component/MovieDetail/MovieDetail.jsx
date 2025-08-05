@@ -10,7 +10,6 @@ const MovieDetail = function (props) {
     name,
     backdrop_path,
   } = props.data;
-  console.log(props.data);
   return (
     <div className={style.moviedetail}>
       <section className={style["moviedetail__info"]}>

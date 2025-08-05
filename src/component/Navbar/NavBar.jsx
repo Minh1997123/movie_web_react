@@ -1,15 +1,17 @@
 import style from "./NavBar.module.css";
 import { useState, memo } from "react";
+import { useNavigate } from "react-router";
 const NavBar = memo(function () {
   const [isScroll, setIsScroll] = useState();
+  const navigate = useNavigate();
 
   //   ham chuyen trang den home
   const toHomeHandler = function () {
-    location.replace("http://localhost:3000/");
+    navigate("/");
   };
   //   ham chuyen trang de nsearch
   const toSearchHandler = function () {
-    location.replace("http://localhost:3000/search");
+    navigate("/search");
   };
   //   lang nghe hanh dong cuon trang
   document.addEventListener("scroll", function () {
@@ -27,6 +29,7 @@ const NavBar = memo(function () {
       }`}
     >
       <p onClick={toHomeHandler}>Movie App</p>
+
       <svg
         onClick={toSearchHandler}
         className="svg-inline--fa fa-search fa-w-16"
