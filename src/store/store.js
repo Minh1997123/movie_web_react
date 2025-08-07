@@ -1,6 +1,6 @@
 const API_KEY = `7faa143323cdc02688d89c4ba2766e4e`;
 
-export const requeMoveType = [
+export const requestMoveType = [
   {
     movieType: "xu Hướng",
     fetch: `/trending/all/week?api_key=${API_KEY}&language=en-US`,
@@ -107,16 +107,18 @@ export const getSearchHandler = async function (movie) {
   }
 };
 // lay du lieu tu api movie type
-export const getMovieTypeHandler = async function () {
+export const getMovieTypeHandler = async function (page) {
+  // lay danh sach the loai phim theo so page
+  const requestMoveTypeCurrent = requestMoveType.slice(page * 3 - 3, page * 3);
   try {
-    const quests = requeMoveType.map(function (item) {
+    const quests = requestMoveTypeCurrent.map(function (item) {
       return fetch(`https://api.themoviedb.org/3${item.fetch}`);
     });
     const resQuery = await Promise.all(quests);
     const movies = resQuery.map(async function (item, index) {
       const resData = await item.json();
       return {
-        movieType: requeMoveType[index].movieType,
+        movieType: requestMoveTypeCurrent[index].movieType,
         data: resData.results,
       };
     });

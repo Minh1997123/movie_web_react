@@ -31,7 +31,7 @@ const cartReducer = function (state, action) {
   if (action.type === "MOVIES") {
     return {
       ...state,
-      dataMovieType: getMovieType(),
+      dataMovieType: getMovieType(action.page),
     };
   }
   //   lay du lieu tu api detail
@@ -57,8 +57,8 @@ const CartProvider = function (props) {
     dispatchCartAction({ type: "SEARCH", movie: movie });
   };
   //   ham lay du lieu tu api movie type
-  const getMovieTypeHandler = function () {
-    dispatchCartAction({ type: "MOVIES" });
+  const getMovieTypeHandler = function (page) {
+    dispatchCartAction({ type: "MOVIES", page: page });
   };
   //   ham lay du lieu tu api detail
   const getDetailHandler = function (movie, movieType) {
@@ -78,7 +78,6 @@ const CartProvider = function (props) {
 
   useEffect(function () {
     cartContext.getOriginHandler();
-    cartContext.getMovieTypeHandler();
   }, []);
   return (
     <CartContext.Provider value={cartContext}>

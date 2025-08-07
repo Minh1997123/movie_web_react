@@ -13,7 +13,9 @@ const Browse = function () {
       // lay du llieu tu context
       const getDataHandler = async function () {
         const data = await moviesContext.dataMovieType;
-        setMovies(data);
+        setMovies((pre) => {
+          return pre.concat(data);
+        });
       };
       getDataHandler();
     },
