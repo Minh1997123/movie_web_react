@@ -59,6 +59,9 @@ const getTrailerHandler = function (data) {
 };
 // lay video tu api cho movie detail
 export const getQueryDetailHandler = async function (movie, movieType) {
+  if (!movie) {
+    return null;
+  }
   try {
     const resQuery = await fetch(
       `https://api.themoviedb.org/3/movie/${movie.id}/videos?api_key=${API_KEY}`
@@ -109,8 +112,14 @@ export const getSearchHandler = async function (movie) {
 // lay du lieu tu api movie type
 export const getMovieTypeHandler = async function (page) {
   // lay danh sach the loai phim theo so page
-  const requestMoveTypeCurrent = requestMoveType.slice(page * 3 - 3, page * 3);
   try {
+    if (!page) {
+      return [];
+    }
+    const requestMoveTypeCurrent = requestMoveType.slice(
+      page * 3 - 3,
+      page * 3
+    );
     const quests = requestMoveTypeCurrent.map(function (item) {
       return fetch(`https://api.themoviedb.org/3${item.fetch}`);
     });

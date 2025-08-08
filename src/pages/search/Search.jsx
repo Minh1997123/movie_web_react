@@ -18,7 +18,7 @@ const Search = () => {
       };
       getDataHandler();
     },
-    [moviesContext]
+    [moviesContext.dataMovieDetail]
   );
   // ham set danh sach phim tim kiem
   const setMoviesHandler = useCallback(function (data) {
